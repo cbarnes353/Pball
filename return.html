@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>pindianna jones</title>
+    <title>pindianna temple</title>
     <script src = "app.js" > </script>
 <script>
     window.pAsyncInit = function() {
@@ -24,10 +24,46 @@
     <!-- GET BOOT STRAP -->  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
-    
+    <style>
+        .paddingBetweenCols {
+            padding:0 30px 0 30px;
+        }
+        .paddedgraph {
+            padding:0 30px 0 30px;
+            width: 50%;
+            height: 100px;
+        }
+        .resize {
+        fit-content: 100%
+        }
+    </style>
 </head>
 <body>
 
     <p> All Good</p>
+ 
+    <h1> User Data</h1>
+    <table>
+    <tr>
+        <td class= "paddingBetweenCols" id="user"></td>
+        <td class= "paddingBetweenCols" id="age"></td>
+        <td class= "paddingBetweenCols" id="height"></td>
+        
+        <td class= "paddingBetweenCols" id="weight"></td>
+        <td>Date Range: </td>
+        <td class= "paddingBetweenCols">
+            <select class="btn btn-primary" id="daterange">
+                <option selected="selected" value="1 week">1 Week</option>
+                <option value="1 month">1 Month</option>
+                <option value="3 month">3 Months</option>
+                <option value="6 month">6 Months</option>
+                <option value="1 year">1 Year</option>
+            </select>
+        </td>
+        <td class= "btn btn-dark" id="logout" onclick="revoketoken();">LogOut</td>
+    </tr>    
+    </table>
+
+ <hr>
 </body>
 </html>
