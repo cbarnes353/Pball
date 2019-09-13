@@ -35,17 +35,31 @@ console.log("Logged: " + userId);
 };
 //************************USER SERIES************************************************
 function getuser (){
-xhr_user = new XMLHttpRequest();
-xhr_user.open('GET', 'GET /v1/me/boards/');
-xhr_user.setRequestHeader("Authorization", 'Bearer ' + access_token);
-xhr_user.send();
-xhr_user.onload = function() {   
-   // document.getElementById('user').innerHTML = xhr_user.status;
-   if (xhr_user.status === 200) {
-        userdata = JSON.parse(xhr_user.responseText);
-        console.log("User: " + userdata);
-         document.getElementById('user').innerHTML = "User: " + userdata;
-        
-      }
+var pins = [];
+PDK.request('/boards/<board_id>/pins/', function (response) { // Make sure to change the board_id
+  if (!response || response.error) {
+    alert('Error occurred');
+  } 
+  else {
+    pins = pins.concat(response.data);
+    if (response.hasNext) {
+      response.next(); // this will recursively go to this same callback
+    }
+  }
+}
 };
-};      
+      
+//xhr_user = new XMLHttpRequest();
+//xhr_user.open('GET', 'GET /v1/me/boards/');
+//xhr_user.setRequestHeader("Authorization", 'Bearer ' + access_token);
+//xhr_user.send();
+//xhr_user.onload = function() {   
+   // document.getElementById('user').innerHTML = xhr_user.status;
+  // if (xhr_user.status === 200) {
+    //    userdata = JSON.parse(xhr_user.responseText);
+      //  console.log("User: " + userdata);
+        // document.getElementById('user').innerHTML = "User: " + userdata;
+        
+     // }
+//};
+//};      
