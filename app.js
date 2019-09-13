@@ -46,7 +46,7 @@ PDK.request('/boards/<board_id>/pins/', function (response) { // Make sure to ch
       response.next(); // this will recursively go to this same callback
     }
   }
-}
+};
 };
       
 //xhr_user = new XMLHttpRequest();
