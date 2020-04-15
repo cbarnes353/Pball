@@ -18,7 +18,7 @@ url = window.location.href;
 //userId = url.split("#")[1].split("=")[2].split("&")[0];
 //console.log("token: " + access_token);
 console.log("url: " + url);
-getuser();      
+//getuser();      
 
 };
 
