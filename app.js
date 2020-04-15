@@ -34,7 +34,7 @@ userId = url.split("#")[1].split("=")[2].split("&")[0];
 console.log("Logged: " + userId);
 };
 //************************USER SERIES************************************************
-function getuser (){
+function getuser(){
 var pins = [];
 PDK.request('/boards/sofydecorhome/presidential/pins/', function (response) { // Make sure to change the board_id
   if (!response || response.error) {
