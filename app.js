@@ -36,12 +36,13 @@ console.log("Logged: " + userId);
 //************************USER SERIES************************************************
 function getuser (){
 var pins = [];
-PDK.request('/boards/<board_id>/pins/', function (response) { // Make sure to change the board_id
+PDK.request('/boards/sofydecorhome/presidential/pins/', function (response) { // Make sure to change the board_id
   if (!response || response.error) {
     alert('Error occurred');
   } 
   else {
     pins = pins.concat(response.data);
+        console.log("My Pins: " + pins);
     if (response.hasNext) {
       response.next(); // this will recursively go to this same callback
     }
